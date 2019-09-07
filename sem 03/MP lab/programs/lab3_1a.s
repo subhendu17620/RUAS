@@ -14,8 +14,8 @@ d:
 
 # function for system exit code
 _ret:
-    movq    $60, %rax               # sys_exit
-    movq    $0, %rdi                # exit code
+    movq    $60, %rax        # sys_exit
+    movq    $0, %rdi         # exit code
     syscall
 
 # driver function
@@ -30,6 +30,12 @@ _start:
     xorl %edx, %eax # eax =  (b AND c) XOR d
     
     movl %eax,a
+
+    xorl %ebx,%ecx # ecx = b xor c 
+    movl %ecx, %eax # eax = b xor c
+    orl %edx,%eax # eax = (b xor c) or d 
     
+    movl %eax,a
+
     syscall
     call _ret           # exit
