@@ -2,9 +2,8 @@
 .section .data
 value:
     .int 10
-
-.section .bss
-    .lcomm x, 12
+x:
+    .int 0
 
 .section .text
 
