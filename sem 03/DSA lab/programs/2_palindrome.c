@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
     for ( i=0;st[i]!='\0';i++){ // for calculating length of the string 
         len++;
     }
-    char rev[20]=" ";
+    char rev[20];
     for (i=len-1; i >= 0; i--)
     {
         rev[len-i-1]=st[i]; // reverse of the input string
