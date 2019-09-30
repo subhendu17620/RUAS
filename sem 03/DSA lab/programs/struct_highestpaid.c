@@ -12,7 +12,9 @@ int main(int argc, char const *argv[]) {
   int n,i,a,large = 0,pos = 0;
   printf("How many employees? \n");
   scanf("%d", &n);
-  printf("Enter employee number, name and salary \n");
+  for (i=0;i<n;i++)
+  {
+      printf("Enter employee number, name and salary \n");
   for (i= 0;i < n;i++)
   {
     scanf("%d%s%f",&E[i].employ_no,&E[i].name,&E[i].salary);
@@ -22,6 +24,7 @@ int main(int argc, char const *argv[]) {
       large = E[i].salary;
       pos = i;
     }
+  }
   }
   printf("Highest paid is \n employee number:%d \n Employee name: %s \n salary: %f \n",E[pos].employ_no,E[pos].name, E[pos].salary );
   return 0;
