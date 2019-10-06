@@ -3,18 +3,23 @@
 
 int main()
 {
-	char str[] = "192.168.12.20";
-    printf("%s",str);
+	char str[] = "12252.168.23.333";
+    //printf("%s",str);
 	int size = strlen(str);
 	char delim[] = ".";
 
+ // char str[100]=" ";
+        // // printf("%s\n",S[i].ip);
+        // strcpy(str,S[i].ip);
+        // //printf("%s",str);
+    	// char delim[] = ".";
+	    // char *ptr =  strtok(str, delim);
+        // printf("'%s'\n", ptr);
+        // octet_1[i]=ptr;
+        
 	char *ptr = strtok(str, delim);
+    printf("'%s'\n", ptr);
 
-	while (ptr != NULL)
-	{
-		printf("'%s'\n", ptr);
-		ptr = strtok(NULL, delim);
-	}
-    printf("%s",str);
+
 	return 0;
 }
