@@ -13,10 +13,10 @@ _ret:
     movq    $0, %rdi                # exit code
     syscall
 
-# driver function
+# driver function  
 _start:
-  
-    movl $0x07, %ebx    # b = 127 // actual number
+
+    movl $0x7f, %ebx    # b = 7 // actual number
     movl $0, %ecx       # c = 0 // to keep track of the number of 1's
 loop:
     movl $1, %eax       # a = 1

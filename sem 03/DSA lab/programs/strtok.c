@@ -3,7 +3,7 @@
 
 int main()
 {
-	char str[] = "12252.168.23.333";
+	char str[] = "thi asdj sakdjask";
     //printf("%s",str);
 	int size = strlen(str);
 	char delim[] = ".";
@@ -18,7 +18,7 @@ int main()
         // octet_1[i]=ptr;
         
 	char *ptr = strtok(str, delim);
-    printf("'%s'\n", ptr);
+    printf("'%c'\n", ptr);
 
 
 	return 0;
