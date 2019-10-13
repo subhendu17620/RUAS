@@ -3,7 +3,7 @@
 #include <string.h> 
 #include <stdlib.h> 
 
-#define MAX 2 // no. of inputs user want to give
+#define MAX 3 // no. of inputs user want to give
 
 struct systemIP
 {
@@ -52,7 +52,6 @@ void main(int argc, char **argv) // main body
             {
                 print_data_class(i);
             }
-
             break;
         case 5:
             exit(1);
