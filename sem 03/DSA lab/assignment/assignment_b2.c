@@ -205,7 +205,8 @@ void percentator(int num1, int num2) // For calculating similarity percentage
 {
     printf("\nPLAGIARISED PERCENTAGE => ");
     float percent = ((float)num1 / (float)num2) * 100;
-    printf(" %0.3f %%", percent);
+    
+    printf(" %0.2f %%", percent);
     if (percent > 30)
         printf("\n\t....PLAGIARISED....\n");
     else

@@ -1,2 +1,1 @@
-char temp;
-        // scanf("%c", &temp);
+     printf("%d -- %d",t,M);
