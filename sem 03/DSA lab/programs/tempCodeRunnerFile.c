@@ -1,1 +1,6 @@
-     printf("%d -- %d",t,M);
+for (int k = 0; k < n; i++)
+    //   {
+         
+    //      printf(ar[i]);
+         
+    //   }
