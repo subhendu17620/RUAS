@@ -9,7 +9,6 @@ void process_data(); // For processing the data and calling LCS function
 void percentator(); // For calculating similarity percentage 
 int max(int num1, int num2); // For calculating MAX of two numbers
 int LCS(char **X, char **Y, int m, int n); // For calculating length of LCS and Printing LCS.
-
 /* global variables */
 char lcs[60][60];
 char data1[100];
