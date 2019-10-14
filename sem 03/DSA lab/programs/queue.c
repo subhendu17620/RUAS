@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 #define SIZE 10
 
@@ -43,13 +44,13 @@ void enQueue(int value){
    }
 }
 void deQueue(){
-   if(front == rear)
+   if(front > rear)
       printf("\nQueue is Empty!!! Deletion is not possible!!!");
    else{
       printf("\nDeleted : %d", queue[front]);
       front++;
       if(front == rear)
-	 front = rear = -1;
+	      front = rear = -1;
    }
 }
 void display(){
