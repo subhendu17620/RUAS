@@ -1,9 +1,10 @@
-# Copy the contents of MSG1 to MSG2
+# Factorial
 .section .data
-value:
-    .ascii "hii welcome\n"
+n:
+    .int 5
+
 .section .bss
-    .lcomm output, 12
+
 .section .text
 
 .globl _start
@@ -14,15 +15,17 @@ _ret:
     movq    $0, %rdi                # exit code
     syscall
 
-# driver function  
+# driver function
 _start:
-    
-    
-    leal value,%esi
-    leal output,%edi
-    movl $12,%ecx
-    std
-    rep movsb
-    
+    movl n, %ebx
+    movl %ebx, %eax
+repeat:
+    subl $1, %ebx
+    mull %ebx
+    cmp $1, %ebx
+    je _end 
+    jmp repeat 
+_end:
+
     syscall
     call _ret           # exit

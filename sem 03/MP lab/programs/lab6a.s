@@ -5,7 +5,7 @@ num1:
 num2:
     .int 20
 oprtn:
-    .int 2
+    .int 3
 
 .section .bss
 

@@ -1,8 +1,11 @@
 # second smallest in unsorted array
 .section .data
-ar:
+array:
     .int 7,3,5,1,6,9
-
+array2:
+    .int 0,0,0,0,0,0
+sec_small:
+    .int 0
 .section .bss
 
 .section .text
@@ -16,44 +19,32 @@ _ret:
     syscall
 
 # driver function  
-_smallest:
 
 _start:
+    movl $0,%ebx
+    movl $0,%ecx
+    movl $0,%edx
+loop1:
+    movl array(,%ecx,4),%eax
+    cmpl %ebx,%eax
+    je loop2
+inc:
+    addl $1,%ecx
+    cmpl $6,%ecx
+    jne loop1
+    addl $1,%ebx
+    movl $0,%ecx
+    cmpl $16,%eax
+    jne loop1
+loop2:
+    movl %eax,array2(,%edx,4)
+    addl $1,%edx
+    cmpl $6,%edx
+    jne inc
+    movl $1,%edx
+    movl array2(,%edx,4),%eax
+    movl %eax,sec_small
     
-    movl $0,%eax; # ar[i]
-    movl $0,%ebx; # ar[j]
-    movl $0,%ecx; # i = 0
-    movl $1,%edx; # j = 1
-
-    # movl ar(,0,4),%eax # moving first element to eax
-
-
-    loop1:
-        movl ar(,%ecx,4),%eax
-        addl $1,%ecx
-        cmp $6, %ecx
-        jne loop2
-        jmp _end
-
-    loop2:
-        movl ar(,%edx,4),%ebx
-        cmp %ebx,%eax
-        jg swap
-        
-    loop3:
-        addl $1,%edx
-        cmp $6, %edx
-        jne loop2
-
-    swap:
-        xorl %eax,%ebx
-        xorl %ebx,%eax
-        xorl %eax,%ebx
-        movl %eax,ar(,%ecx,4)
-        movl %ebx,ar(,%edx,4)
-        jmp loop3
-
-
-    _end:
+    
     syscall
     call _ret           # exit
