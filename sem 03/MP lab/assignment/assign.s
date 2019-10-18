@@ -15,8 +15,23 @@ _ret:
 
 # driver function  
 _start:
-    movl $0b011010101,%esi
+    movl $0b1011,%esi # esi = binary 
+    loop:
+        movl %esi,%edi # edi = esi
+        andl $0b1111,%edi # edi = edi and 1111 
+        sarl $1,%esi
+        cmp $0b1011,%edi
+        je equal
+        # jne not_equal
 
+    equal:
+        orl $1,%edi
+        sall $1,%edi
+        jmp loop
+
+    # not_equal:
+        
+      #   jmp loop
 
     syscall
     call _ret           # exit

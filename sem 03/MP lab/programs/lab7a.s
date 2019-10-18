@@ -21,8 +21,11 @@ _start:
     leal value,%esi
     leal output,%edi
     movl $12,%ecx
-    std
-    rep movsb
+    cld
     
+    rep movsb
+    # movsw
+    # movsl
+
     syscall
     call _ret           # exit

@@ -1,9 +1,9 @@
 # Copy the contents of MSG1 to MSG2
 .section .data
-value:
-    .ascii "hii welcome\n"
+str1:
+    .ascii "hi hello"
 .section .bss
-    .lcomm output, 12
+    .lcomm ou,10
 .section .text
 
 .globl _start
@@ -14,15 +14,18 @@ _ret:
     movq    $0, %rdi                # exit code
     syscall
 
-# driver function  
+# driver function
 _start:
-    
-    
-    leal value,%esi
-    leal output,%edi
-    movl $12,%ecx
-    std
-    rep movsb
-    
+    movl $str1+7,%esi
+    movl $ou,%edi
+    movl $0,%edx
+
+    loop:
+        movsb
+        subl $2,%esi
+        addl $1,%edx
+        cmp $8,%edx
+        jne loop
+
     syscall
     call _ret           # exit
