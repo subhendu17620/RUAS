@@ -6,7 +6,7 @@ ar_len:
     .int 10
 .section .bss
 
-.section .text
+.section .text  
 
 .globl _start
 # function for system exit code
@@ -41,9 +41,21 @@ _start:
     not_equal:
         movl $0,ar(,%edx,4)
         subl $1,%edx
-        jmp loop
-        
+        jmp loop 
     _end:
-    
+
+
+    # for converting array to binary
+    movl $0,%ecx
+    movl $0,%eax # counter
+
+    loop1:
+        orl ar(,%eax,4),%ecx
+        sall $1,%ecx
+        addl $1,%eax
+        cmp $9,%eax
+        jne loop1
+
+
     syscall
     call _ret           # exit

@@ -11,8 +11,11 @@ x:
 
 # function for system exit code
 _ret:
-    movq    $60, %rax               # sys_exit
-    movq    $0, %rdi                # exit code
+    # movq    $60, %rax               # sys_exit
+    # movq    $0, %rdi                # exit code
+    movl $1,%eax
+    movl $0,%ebx
+    int 0x80
     syscall
 
 # driver function
