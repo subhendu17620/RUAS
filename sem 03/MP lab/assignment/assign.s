@@ -3,7 +3,7 @@
 ar:
     .int 0,0,0,0,0,0,0,0,0,0
 ar_len:
-    .int 10
+    .int 9
 .section .bss
 
 .section .text  
@@ -17,19 +17,19 @@ _ret:
 
 # driver function  
 _start:
-    movl $0b0010110110,%esi # esi = binary 
+    movl $0b110011001,%esi
     movl ar_len,%edx
     subl $1,%edx
 
     loop:
-        movl %esi,%edi # edi = esi
-        andl $0b1111,%edi # edi = edi and 1111 
+        movl %esi,%edi
+        andl $0b1111,%edi 
         sarl $1,%esi
         
         cmp $0,%edx
         je _end 
               
-        cmp $0b1011,%edi
+        cmp $0b1100,%edi
         je equal
         jne not_equal   
         
@@ -47,13 +47,13 @@ _start:
 
     # for converting array to binary
     movl $0,%ecx
-    movl $0,%eax # counter
+    movl $0,%eax 
 
     loop1:
         orl ar(,%eax,4),%ecx
         sall $1,%ecx
         addl $1,%eax
-        cmp $9,%eax
+        cmp $8,%eax
         jne loop1
 
 
