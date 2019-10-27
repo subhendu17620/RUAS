@@ -22,7 +22,7 @@ _start:
     leal output,%edi
     movl $12,%ecx
     cld
-    
+
     rep movsb
     # movsw
     # movsl
