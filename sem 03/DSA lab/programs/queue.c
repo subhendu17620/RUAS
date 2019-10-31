@@ -12,7 +12,7 @@ int queue[SIZE], front = -1, rear = -1;
 void main()
 {
    int value, choice;
-   
+
    while(1){
       printf("\n\n***** MENU *****\n");
       printf("1. Insertion\n2. Deletion\n3. Display\n4. Exit");
