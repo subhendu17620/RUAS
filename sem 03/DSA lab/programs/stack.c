@@ -17,7 +17,7 @@ void main()
 
     while (1)
     {
-        /*clrscr();*/
+        
         printf("Enter Choice (1: display, 2: PUSH, 3: POP, 4: Exit..:");
         scanf("%d", &choice);
 

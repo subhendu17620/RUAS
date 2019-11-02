@@ -1,3 +1,4 @@
+// infix to postfix using stack
 #include <stdio.h>
 #include <ctype.h>
 

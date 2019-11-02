@@ -1,3 +1,4 @@
+// postfix evalution
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -34,7 +35,7 @@ int pop()
 
 void print()
 {
-  printf("\n");
+  printf("\n Evaluted No.: ");
   for (int i = top; i >= 0; i--)
   {
     printf("%d\n", s[i]);
@@ -46,6 +47,7 @@ void main()
 {
   char str[10], operator;
   int op1, op2;
+  printf("Postfix Expression : ");
   gets(str);
   for (int i = 0; i < strlen(str); i++)
   {
