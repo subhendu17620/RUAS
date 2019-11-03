@@ -1,4 +1,4 @@
-// delete the element entered by a user
+// linked list- delete the element entered by a user
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -60,7 +60,7 @@ void print()
     {
         while (temp != NULL)
         {
-            printf("%d\n", temp->data);
+            printf("%d -> ", temp->data);
             temp = temp->next;
         }
     }
@@ -70,7 +70,7 @@ int main(int argc, char const *argv[])
     int ITEM, choice;
     while (1)
     {
-        printf("Enter Choice (1: PRINT, 2: PUSH, 3: POP, 4: Exit..:");
+        printf("\nEnter Choice (1: PRINT, 2: PUSH, 3: POP, 4: Exit..:");
         scanf("%d", &choice);
 
         switch (choice)
