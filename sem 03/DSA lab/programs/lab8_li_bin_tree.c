@@ -7,7 +7,7 @@ struct li_node{
   struct li_node *next;
 };
 
-struct li_node *head = NULL;
+struct li_node *head = NULL; 
 
 struct li_node *newNode(int v){
   struct li_node *temp = (struct li_node *)malloc(sizeof(struct li_node));
