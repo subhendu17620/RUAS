@@ -1,7 +1,9 @@
 // sorts
 #include <stdio.h>
 #include <time.h>
-#define max 10000
+
+#define max 10
+
 // for bubble sort
 void bubbleSort(int array[], int size)
 {
@@ -78,35 +80,38 @@ int main()
 {
 
   int data[max];
-  // we are getting time for worst -case
-  for (size_t i = max; i < -1; i--)
+  // we are getting time for worst-case
+  // for (size_t i = max; i < -1; i--)
+  // {
+  //   data[i] = i;
+  // }
+  printf("Enter array: ");
+  for (size_t i = 0; i < max; i++)
   {
-    data[i] = i;
+    scanf("%d",&data[i]);
   }
-
+  
   int size = sizeof(data) / sizeof(data[0]);
- 
   clock_t start_t, end_t;
+  
   start_t = clock();
-  bubbleSort(data, size);
+  bubbleSort(data, max);
   end_t = clock();
-  printf("\ntime elapsed for bubble-sort %f", (double)(end_t - start_t) / CLOCKS_PER_SEC);
+  printf("Bubble Sort: ");
+  printArray(data, max);
+  printf("\nExecution time for Bubble-sort : %f seconds", (double)(end_t - start_t) / CLOCKS_PER_SEC);
 
-  // printf("\nbubble sort: ");
-  // printArray(data, size);
-
-  // printf("\nselection sort: ");
   start_t = clock();
-  selectionSort(data, size);
+  selectionSort(data, max);
   end_t = clock();
-  printf("\ntime elapsed for selection-sort %f", (double)(end_t - start_t) / CLOCKS_PER_SEC);
-
-  // printArray(data, size);
+  printf("\nSelection Sort: ");
+  printArray(data, max);
+  printf("\nExecution time for Selection-sort : %f seconds", (double)(end_t - start_t) / CLOCKS_PER_SEC);
   
   start_t = clock();
   quickSort(data, 0, max - 1);
   end_t = clock();
-  printf("\ntime elapsed for quick-sort %f", (double)(end_t - start_t) / CLOCKS_PER_SEC);
-
-  // printArray(data, size);
+  printf("\nQuick Sort: ");
+  printArray(data, max);
+  printf("\nExecution time for Quick-sort : %f seconds", (double)(end_t - start_t) / CLOCKS_PER_SEC);
 }
